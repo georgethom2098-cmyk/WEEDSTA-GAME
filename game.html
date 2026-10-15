@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weedsta Game</title>
+
+    <link rel="stylesheet" href="game.css">
+</head>
+
+<body>
+
+    <div class="game">
+
+        <!-- TOP BAR -->
+        <header class="game-topbar">
+
+            <div class="player-money">
+                <span>💰</span>
+                <span id="money">0</span>
+            </div>
+
+            <div class="farm-title">
+                WEEDSTA FARM
+            </div>
+
+            <div class="topbar-actions">
+                <button class="collection-button" id="collectionButton">
+                    COLLECTION
+                </button>
+
+                <button class="leaderboard-button" id="leaderboardButton">
+                    LEADERBOARD
+                </button>
+            </div>
+
+        </header>
+
+        <div id="seedSelectionBanner" class="seed-selection-banner hidden">
+            <span>Choose a ground to plant your seed</span>
+            <button id="cancelSeedSelection" class="seed-cancel-button" type="button">
+                Cancel
+            </button>
+        </div>
+
+
+        <!-- FARM AREA -->
+
+        <main class="farm-area">
+
+            <div class="farm-wrapper" id="farmWrapper">
+
+                <img
+                    id="farmImage"
+                    class="farm-image"
+                    src="farm1.png"
+                    alt="Farm"
+                >
+
+                <div class="farm-decorations" aria-hidden="true">
+                    <span class="farm-firefly firefly-one"></span>
+                    <span class="farm-firefly firefly-two"></span>
+                    <span class="farm-firefly firefly-three"></span>
+                    <div class="farmer-character">
+                        <span class="farmer-shadow"></span>
+                        <span class="farmer-tool"></span>
+                        <span class="farmer-leg farmer-leg-left"></span>
+                        <span class="farmer-leg farmer-leg-right"></span>
+                        <span class="farmer-boot farmer-boot-left"></span>
+                        <span class="farmer-boot farmer-boot-right"></span>
+                        <span class="farmer-body"></span>
+                        <span class="farmer-overalls"></span>
+                        <span class="farmer-arm farmer-arm-left"></span>
+                        <span class="farmer-arm farmer-arm-right"></span>
+                        <span class="farmer-head">
+                            <span class="farmer-face"></span>
+                        </span>
+                        <span class="farmer-hat"></span>
+                    </div>
+                </div>
+
+                <!-- Grounds will be created here by JavaScript -->
+
+                <div
+                    id="groundLayer"
+                    class="ground-layer">
+                </div>
+
+            </div>
+
+        </main>
+
+
+        <!-- COLLECTION PANEL -->
+
+        <section
+            id="collectionPanel"
+            class="collection-panel hidden">
+
+            <div class="collection-header">
+
+                <h1>COLLECTION</h1>
+
+                <button
+                    id="closeCollection"
+                    class="close-button">
+                    ✕
+                </button>
+
+            </div>
+
+
+            <!-- COLLECTION TABS -->
+
+            <div class="collection-tabs">
+
+                <button
+                    class="collection-tab active"
+                    data-section="farms">
+                    FARMS
+                </button>
+
+                <button
+                    class="collection-tab"
+                    data-section="equipment">
+                    EQUIPMENT
+                </button>
+
+            </div>
+
+
+            <!-- FARM COLLECTION -->
+
+            <div
+                id="farmsSection"
+                class="collection-section">
+
+                <div class="collection-grid">
+
+
+                    <!-- FARM 1 -->
+
+                    <div
+                        class="collection-card unlocked"
+                        data-farm="1">
+
+                        <div class="farm-preview">
+                            <img src="farm1.png" alt="Farm 1">
+                        </div>
+
+                        <h2>STARTER FARM</h2>
+
+                        <p class="farm-capacity">
+                            4 GROUND SLOTS
+                        </p>
+
+                        <button class="farm-select">
+                            SELECT
+                        </button>
+
+                    </div>
+
+
+                    <!-- FARM 2 -->
+
+                    <div
+                        class="collection-card locked"
+                        data-farm="2">
+
+                        <div class="farm-preview">
+                            <img src="farm2.png" alt="Farm 2">
+                            <div class="lock-overlay">🔒</div>
+                        </div>
+
+                        <h2>FARM 2</h2>
+
+                        <p class="farm-capacity">
+                            6 GROUND SLOTS
+                        </p>
+
+                        <button class="farm-select">
+                            LOCKED
+                        </button>
+
+                    </div>
+
+
+                    <!-- FARM 3 -->
+
+                    <div
+                        class="collection-card locked"
+                        data-farm="3">
+
+                        <div class="farm-preview">
+                            <img src="farm3.png" alt="Farm 3">
+                            <div class="lock-overlay">🔒</div>
+                        </div>
+
+                        <h2>FARM 3</h2>
+
+                        <p class="farm-capacity">
+                            8 GROUND SLOTS
+                        </p>
+
+                        <button class="farm-select">
+                            LOCKED
+                        </button>
+
+                    </div>
+
+
+                    <!-- FARM 4 -->
+
+                    <div
+                        class="collection-card locked"
+                        data-farm="4">
+
+                        <div class="farm-preview">
+                            <img src="farm4.png" alt="Farm 4">
+                            <div class="lock-overlay">🔒</div>
+                        </div>
+
+                        <h2>FARM 4</h2>
+
+                        <p class="farm-capacity">
+                            10 GROUND SLOTS
+                        </p>
+
+                        <button class="farm-select">
+                            LOCKED
+                        </button>
+
+                    </div>
+
+
+                    <!-- FARM 5 -->
+
+                    <div
+                        class="collection-card locked"
+                        data-farm="5">
+
+                        <div class="farm-preview">
+                            <img src="farm5.png" alt="Farm 5">
+                            <div class="lock-overlay">🔒</div>
+                        </div>
+
+                        <h2>FARM 5</h2>
+
+                        <p class="farm-capacity">
+                            12 GROUND SLOTS
+                        </p>
+
+                        <button class="farm-select">
+                            LOCKED
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- EQUIPMENT COLLECTION -->
+
+            <div
+                id="equipmentSection"
+                class="collection-section hidden">
+
+                <div class="empty-collection">
+
+                    <div class="empty-icon">
+                        ⚒️
+                    </div>
+
+                    <h2>EQUIPMENT</h2>
+
+                    <p>
+                        Equipment upgrades coming soon.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section id="leaderboardPanel" class="leaderboard-panel hidden">
+            <div class="leaderboard-card">
+                <div class="leaderboard-header">
+                    <h2>LEADERBOARD</h2>
+                    <button id="closeLeaderboard" class="close-button" type="button">
+                        ✕
+                    </button>
+                </div>
+
+                <div id="leaderboardPrompt" class="leaderboard-prompt">
+                    <h3>JOIN THE LEADERBOARD</h3>
+                    <p>Choose your name and compete with other Weedsta farmers.</p>
+
+                    <form id="leaderboardNameForm" class="leaderboard-name-form">
+                        <label for="playerNameInput">Enter your player name</label>
+                        <input id="playerNameInput" type="text" maxlength="16" placeholder="Enter your player name">
+                        <button type="submit">SAVE NAME</button>
+                    </form>
+                </div>
+
+                <div id="leaderboardContent" class="leaderboard-content hidden">
+                    <div id="leaderboardMeta" class="leaderboard-meta"></div>
+
+                    <div class="leaderboard-table">
+                        <div class="leaderboard-row leaderboard-head">
+                            <span>RANK</span>
+                            <span>PLAYER</span>
+                            <span>COINS</span>
+                        </div>
+                        <div id="leaderboardRows" class="leaderboard-rows"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+
+    <script src="game.js"></script>
+
+</body>
+</html>
